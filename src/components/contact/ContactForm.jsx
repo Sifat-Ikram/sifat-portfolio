@@ -145,7 +145,7 @@ const ContactForm = () => {
         <div className="form-control">
           <button
             type="submit"
-            className="btn w-full bg-[#233bb1] text-white dark:bg-[#161929] dark:border-2 border-white font-semibold dark:hover:bg-white dark:hover:text-[#161929] hover:scale-105 transition-transform"
+            className="btn w-full bg-[#233bb1] hover:cursor-pointer text-white dark:bg-[#161929] dark:border-2 border-white font-semibold dark:hover:bg-white dark:hover:text-[#161929] hover:scale-105 transition-transform"
           >
             Send
           </button>

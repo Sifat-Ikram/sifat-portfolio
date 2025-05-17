@@ -30,7 +30,7 @@ const Services = () => {
             className="w-full"
             data-aos-anchor-placement="center-center"
           >
-            <div className="shadow w-full h-auto bg-base-300 rounded-xl p-4 sm:p-4 md:p-3 dark:bg-[#161929] dark:border-[2px] border-solid border-white hover:border-blue-800 transition-colors duration-300">
+            <div className="shadow w-full h-[150px] bg-base-300 rounded-xl p-4 sm:p-4 md:p-3 dark:bg-[#161929] dark:border-[2px] border-solid border-white hover:border-blue-800 hover:dark:border-white transition-colors duration-300">
               <h1 className="mb-2 sm:mb-3 text-lg sm:text-xl md:text-base lg:text-xl font-semibold text-gray-900 dark:text-white">
                 Front-end Development
               </h1>
@@ -47,7 +47,7 @@ const Services = () => {
             className="w-full"
             data-aos-anchor-placement="top-bottom"
           >
-            <div className="shadow w-full h-auto bg-base-300 rounded-xl p-4 sm:p-4 md:p-3 dark:bg-[#161929] dark:border-[2px] border-solid border-white hover:border-blue-800 transition-colors duration-300">
+            <div className="shadow w-full h-[150px] bg-base-300 rounded-xl p-4 sm:p-4 md:p-3 dark:bg-[#161929] dark:border-[2px] border-solid border-white hover:border-blue-800 hover:dark:border-white transition-colors duration-300">
               <h1 className="mb-2 sm:mb-3 text-lg sm:text-xl md:text-base lg:text-xl font-semibold text-gray-900 dark:text-white">
                 Back-end Development
               </h1>
@@ -65,7 +65,7 @@ const Services = () => {
           className="w-full"
           data-aos-anchor-placement="top-center"
         >
-          <div className="shadow w-full h-auto bg-base-300 rounded-xl p-4 sm:p-4 md:p-3 dark:bg-[#161929] dark:border-[2px] border-solid border-white hover:border-blue-800 transition-colors duration-300">
+          <div className="shadow w-full h-[150px] bg-base-300 rounded-xl p-4 sm:p-4 md:p-3 dark:bg-[#161929] dark:border-[2px] border-solid border-white hover:border-blue-800 hover:dark:border-white transition-colors duration-300">
             <h1 className="mb-2 sm:mb-3 text-lg sm:text-xl md:text-base lg:text-xl font-semibold text-gray-900 dark:text-white">
               Full Stack Development
             </h1>
