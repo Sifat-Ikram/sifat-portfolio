@@ -44,7 +44,7 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
-        href="https://drive.google.com/file/d/1asvzZ-YuaYv1BvA4LD_uz1aqC7PydqDB/view?usp=sharing"
+        href="https://drive.google.com/file/d/1xuIOGw4sU_Enh4fgrckUGIjXruy-CVHR/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full md:w-48 lg:w-56 text-center text-sm sm:text-lg md:text-sm lg:text-lg font-medium uppercase flex items-center gap-2 px-4 py-2 mb-4 sm:mb-6 border border-solid border-white rounded-2xl cursor-pointer bg-blue-800 text-white hover:text-white hover:bg-blue-900 dark:bg-[#161929] dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#161929] transition-all duration-200"
