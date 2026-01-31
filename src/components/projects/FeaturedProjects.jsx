@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import spark from "@/assets/spark-gear.png"
 
 const FeaturedProjects = () => {
   useEffect(() => {
@@ -13,6 +14,14 @@ const FeaturedProjects = () => {
   }, []);
 
   const projects = [
+    {
+      title: "Spark Gear",
+      image: spark,
+      description:
+        "This is a full-stack e-commerce website where users can sign up, browse products, add items to the cart, and place orders. Authentication is handled using JWT and cookies. Users can manage their cart and view orders. An admin can add, edit, and delete products, manage users, and control user roles.",
+      link: "https://spark-gear-six.vercel.app/",
+      github: "https://github.com/Sifat-Ikram/spark-gear-ecommerce",
+    },
     {
       title: "Shop Sphere",
       image: "https://i.ibb.co/VY01th3b/shop.png",
@@ -39,15 +48,6 @@ const FeaturedProjects = () => {
       link: "https://career-hub-web.web.app/",
       githubClient: "https://github.com/Sifat-Ikram/career-hub-client",
       githubServer: "https://github.com/Sifat-Ikram/career-hub-server",
-    },
-    {
-      title: "Travel Beyond",
-      image: "https://i.ibb.co/TBHFgw6R/travel.png",
-      description:
-        "This is a travel website. Here a user can book or delete a tour package. An admin can add, update, and delete a tour package and delete and update a user.",
-      link: "https://travel-beyond-web.web.app/",
-      githubClient: "https://github.com/Sifat-Ikram/travel-beyond-client",
-      githubServer: "https://github.com/Sifat-Ikram/travel-beyond-server",
     },
   ];
 
@@ -99,26 +99,30 @@ const FeaturedProjects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-1.5 text-sm font-semibold bg-white text-black rounded hover:bg-slate-200 transition"
+                  className="px-4 py-1.5 cursor-pointer text-sm font-semibold bg-white text-black rounded hover:bg-slate-200 transition"
                 >
                   Visit
                 </a>
                 <a
-                  href={project.githubClient}
+                  href={
+                    project.githubServer ? project.githubClient : project.github
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-1.5 text-sm font-semibold bg-white text-black rounded hover:bg-slate-200 transition"
+                  className="px-4 py-1.5 cursor-pointer text-sm font-semibold bg-white text-black rounded hover:bg-slate-200 transition"
                 >
-                  Client Code
+                  {project.githubServer ? "Client Code" : "Code"}
                 </a>
-                <a
-                  href={project.githubServer}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-1.5 text-sm font-semibold bg-white text-black rounded hover:bg-slate-200 transition"
-                >
-                  Server Code
-                </a>
+                {project.githubServer && (
+                  <a
+                    href={project.githubServer}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-1.5 cursor-pointer text-sm font-semibold bg-white text-black rounded hover:bg-slate-200 transition"
+                  >
+                    Server Code
+                  </a>
+                )}
               </div>
             </div>
           </div>

@@ -20,46 +20,64 @@ const DrawerComponent = () => {
   ];
 
   return (
-    <div className="dark:bg-[#161929]">
-      <div className="drawer drawer-end">
-        <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
-          {/* Page content here */}
-          <label
-            htmlFor="my-drawer-4"
-            className="drawer-button btn border bg-base-300 border-solid h-14 w-14 flex justify-center items-center font-medium text-2xl rounded-full cursor-pointer hover:bg-blue-800 text-gray-900 hover:text-white dark:bg-[#161929] dark:text-white dark:border-white dark:hover:text-[#161929] dark:hover:bg-white transition-all duration-200"
-          >
-            <GiHamburgerMenu />
-          </label>
-        </div>
-        <div className="drawer-side">
-          <label
-            htmlFor="my-drawer-4"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
-          <ul className="menu bg-base-200 text-base-content min-h-full w-20 p-4 flex flex-col justify-between items-center">
-            {sections.map((section) => (
-              <li
-                key={section.id}
-                className="border-[1px] border-solid h-12 w-12 flex justify-center items-center font-medium text-xl text-gray-900 dark:text-white border-gray-300 rounded-full transition-all duration-200 
-             hover:bg-blue-800 hover:text-white 
-             dark:hover:bg-white dark:hover:text-[#161929]"
-              >
+    <div className="drawer drawer-end">
+      <input id="drawer-nav" type="checkbox" className="drawer-toggle" />
+
+      {/* Hamburger Button */}
+      <div className="drawer-content">
+        <label
+          htmlFor="drawer-nav"
+          aria-label="Open navigation"
+          className="btn h-14 w-14 rounded-full border border-gray-300 bg-white 
+          flex items-center justify-center text-2xl
+          hover:bg-blue-800 hover:text-white
+          dark:bg-[#161929] dark:border-white dark:text-white
+          dark:hover:bg-white dark:hover:text-[#161929]
+          transition-all duration-300 shadow-lg"
+        >
+          <GiHamburgerMenu />
+        </label>
+      </div>
+
+      {/* Drawer Menu */}
+      <div className="drawer-side z-50">
+        <label htmlFor="drawer-nav" className="drawer-overlay"></label>
+
+        <ul
+          className="menu min-h-full w-20 bg-white dark:bg-[#161929] 
+        flex flex-col items-center justify-evenly py-6"
+        >
+          {sections.map((section) => (
+            <li key={section.id} className="group relative">
+              <label htmlFor="drawer-nav">
                 <Link
                   to={section.id}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
+                  smooth
                   duration={500}
-                  className="flex items-center cursor-pointer transition-all"
+                  offset={-80}
+                  className="h-12 w-12 rounded-full border border-blue-800
+                  flex items-center justify-center text-xl cursor-pointer text-blue-800
+                  hover:bg-blue-800 hover:text-white
+                  dark:border-white dark:text-white
+                  dark:hover:bg-white dark:hover:text-[#161929]
+                  transition-all duration-200"
                 >
                   {section.icon}
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+              </label>
+
+              {/* Tooltip */}
+              <span
+                className="absolute right-0 bottom-full -translate-y-1/2 
+              opacity-0 group-hover:opacity-100 pointer-events-none
+              bg-gray-900 text-white text-xs py-1 rounded
+              transition-all duration-200 whitespace-nowrap"
+              >
+                {section.label}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

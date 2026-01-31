@@ -7,6 +7,7 @@ import Aos from "aos";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import "aos/dist/aos.css";
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
   const {
@@ -35,12 +36,22 @@ const ContactForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          reset();
         },
         (error) => {
           console.log(error.text);
         }
       );
+
+    Swal.fire({
+      icon: "success",
+      title: "Message Sent!",
+      text: "Thanks for reaching out. I’ll get back to you soon.",
+      timer: 2000,
+      showConfirmButton: false,
+      position: "top-end",
+      toast: true,
+    });
+    reset();
   };
 
   return (

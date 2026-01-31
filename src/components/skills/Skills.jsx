@@ -13,6 +13,7 @@ import {
   SiRedux,
   SiTypescript,
 } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -22,6 +23,12 @@ const skillData = [
   {
     icon: <TbBrandJavascript />,
     label: "JavaScript",
+    movement: "zoom-out-down",
+    duration: "1000",
+  },
+  {
+    icon: <SiTypescript />,
+    label: "Typescript",
     movement: "zoom-out-down",
     duration: "1000",
   },
@@ -62,6 +69,12 @@ const skillData = [
     duration: "1500",
   },
   {
+    icon: <BiLogoPostgresql />,
+    label: "PostgreSQL",
+    movement: "zoom-out-down",
+    duration: "1500",
+  },
+  {
     icon: <SiFirebase />,
     label: "Firebase",
     movement: "zoom-out-down",
@@ -82,12 +95,6 @@ const skillData = [
   {
     icon: <SiRedux />,
     label: "Redux",
-    movement: "zoom-out-down",
-    duration: "3000",
-  },
-  {
-    icon: <SiTypescript />,
-    label: "Typescript",
     movement: "zoom-out-down",
     duration: "3000",
   },
@@ -116,26 +123,27 @@ const Skills = () => {
         </h1>
       </motion.button>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-2 gap-2 sm:gap-3 lg:gap-4">
         {skillData.map((skill, index) => (
           <motion.div
             key={skill.label}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="flex flex-col items-center"
+            className="flex flex-col"
           >
             <div
               data-aos={skill.movement}
               data-aos-duration={skill.duration}
               data-aos-easing="ease-in-sine"
+              className="flex flex-col items-center justify-center"
             >
               <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center rounded-full bg-base-300 dark:bg-[#161929] border-2 border-white shadow hover:bg-base-200 dark:hover:bg-white dark:hover:text-[#161929] transition-colors duration-300">
                 <div className="text-2xl sm:text-3xl font-bold">
                   {skill.icon}
                 </div>
               </div>
-              <h1 className="mt-2 text-base sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white text-center">
+              <h1 className="mt-3 text-base sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white text-center">
                 {skill.label}
               </h1>
             </div>

@@ -31,13 +31,31 @@ const Experience = () => {
       >
         <div className="px-4 py-4 sm:px-5 sm:py-5 shadow space-y-2 sm:space-y-3 rounded-lg bg-base-300 hover:shadow dark:border-[2px] border dark:bg-[#161929] border-solid border-white transition-colors duration-300">
           <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
+            Iinteca
+          </h1>
+          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+            Junior Frontend Developer
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg font-medium text-gray-900 dark:text-white">
+            5th October, 2025 - Present
+          </p>
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+        className="w-full"
+      >
+        <div className="px-4 py-4 sm:px-5 sm:py-5 shadow space-y-2 sm:space-y-3 rounded-lg bg-base-300 hover:shadow dark:border-[2px] border dark:bg-[#161929] border-solid border-white transition-colors duration-300">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
             Lofistack
           </h1>
           <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
             Frontend Developer
           </h2>
           <p className="text-sm sm:text-base md:text-lg font-medium text-gray-900 dark:text-white">
-            1st November, 2024 - 1st May, 2025
+            1st November, 2024 - 1st October, 2025
           </p>
         </div>
       </motion.div>
