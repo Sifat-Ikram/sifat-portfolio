@@ -28,10 +28,9 @@ const Introduction = () => {
         transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
         className="max-w-3xl"
       >
-        <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-[44px] font-semibold leading-tight text-gray-900 dark:text-white">
-          Say Hello from{" "}
-          <span className="font-bold uppercase">Md. Sifat Ikram,</span> Full
-          Stack Developer
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-[44px] font-medium leading-tight text-gray-900 dark:text-white">
+         Hi, I’m <span className="font-bold uppercase">Md. Sifat Ikram</span> —
+          A Frontend Developer who builds scalable, user-focused web applications, with hands-on MERN stack experience.
         </h1>
       </motion.div>
     </section>

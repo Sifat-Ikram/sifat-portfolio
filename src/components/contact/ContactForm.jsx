@@ -31,7 +31,7 @@ const ContactForm = () => {
         process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
         formRef.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_PUBLIC_KEY,
       )
       .then(
         (result) => {
@@ -39,7 +39,7 @@ const ContactForm = () => {
         },
         (error) => {
           console.log(error.text);
-        }
+        },
       );
 
     Swal.fire({
@@ -57,110 +57,96 @@ const ContactForm = () => {
   return (
     <section
       id="contact"
-      className="w-11/12 mx-auto px-2 sm:px-4 py-10 sm:py-14 md:py-16 lg:py-20 bg-white dark:bg-[#161929] transition-colors duration-300"
+      className="w-11/12 mx-auto py-14 md:py-20 bg-white dark:bg-[#161929] transition-colors duration-300"
     >
-      {/* Section Header */}
-      <motion.button
-        initial={{ opacity: 0, y: -15 }}
+      {/* Section Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-2 px-4 py-2 mb-10 shadow rounded-full cursor-pointer bg-base-300 text-gray-800 hover:text-white hover:bg-[#041C93] dark:bg-[#161929] dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#161929] border border-white transition-all duration-300"
+        className="flex mb-6"
       >
-        <IoMailOpenSharp className="text-lg sm:text-xl" />
-        <h1 className="text-xs sm:text-sm md:text-base font-semibold uppercase">
-          Contact
-        </h1>
-      </motion.button>
+        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-base-300 text-gray-800 dark:bg-[#161929] dark:text-white border border-white">
+          <IoMailOpenSharp className="text-base" />
+          <span className="text-xs sm:text-sm font-semibold uppercase tracking-wide">
+            Contact
+          </span>
+        </div>
+      </motion.div>
 
-      {/* Title */}
-      <h1 className="mb-10 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center">
-        Contact Me
-      </h1>
+      {/* Heading */}
+      <h2 className="mb-12 text-center text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white">
+        Let’s work together
+      </h2>
 
       {/* Form */}
       <form
         ref={formRef}
         onSubmit={handleSubmit(sendEmail)}
-        className="w-full sm:w-11/12 lg:w-4/5 mx-auto flex flex-col gap-5 sm:gap-5 md:gap-4 lg:gap-6"
+        className="w-full sm:w-11/12 lg:w-4/5 mx-auto grid gap-6"
       >
         {/* Name & Email */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-5 md:gap-4 lg:gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <div data-aos="fade-up">
-            <div className="form-control space-y-1 flex flex-col">
-              <label className="label">
-                <span className="label-text text-sm sm:text-base dark:text-white">
-                  Your Full Name
-                </span>
-              </label>
-              <input
-                type="text"
-                name="Full_Name"
-                placeholder="Full Name"
-                {...register("name", { required: "Full Name is required" })}
-                className="input input-bordered text-sm sm:text-base w-full"
-              />
-              {errors.name && (
-                <span className="text-red-500 dark:text-red-300 text-xs sm:text-sm">
-                  {errors.name.message}
-                </span>
-              )}
-            </div>
+            <label className="block mb-1 text-sm font-medium dark:text-white">
+              Full Name
+            </label>
+            <input
+              type="text"
+              name="Full_Name"
+              placeholder="John Doe"
+              {...register("name", { required: "Full name is required" })}
+              className="w-full px-4 py-3 rounded-lg input input-bordered focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+            {errors.name && (
+              <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
+            )}
           </div>
 
           <div data-aos="fade-up">
-            <div className="form-control space-y-1 flex flex-col">
-              <label className="label">
-                <span className="label-text text-sm sm:text-base dark:text-white">
-                  Email
-                </span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                {...register("email", { required: "Email is required" })}
-                className="input input-bordered text-sm sm:text-base w-full"
-              />
-              {errors.email && (
-                <span className="text-red-500 dark:text-red-300 text-xs sm:text-sm">
-                  {errors.email.message}
-                </span>
-              )}
-            </div>
+            <label className="block mb-1 text-sm font-medium dark:text-white">
+              Email Address
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@email.com"
+              {...register("email", { required: "Email is required" })}
+              className="w-full px-4 py-3 rounded-lg input input-bordered focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+            {errors.email && (
+              <p className="mt-1 text-xs text-red-500">
+                {errors.email.message}
+              </p>
+            )}
           </div>
         </div>
 
         {/* Message */}
         <div data-aos="fade-up">
-          <div className="form-control space-y-1 flex flex-col">
-            <label className="label">
-              <span className="label-text text-sm sm:text-base dark:text-white">
-                Message
-              </span>
-            </label>
-            <textarea
-              name="Message"
-              placeholder="Type your message here..."
-              {...register("message", { required: "Message is required" })}
-              className="textarea input-bordered text-sm sm:text-base min-h-[120px] w-full"
-            ></textarea>
-            {errors.message && (
-              <span className="text-red-500 dark:text-red-300 text-xs sm:text-sm">
-                {errors.message.message}
-              </span>
-            )}
-          </div>
+          <label className="block mb-1 text-sm font-medium dark:text-white">
+            Message
+          </label>
+          <textarea
+            name="Message"
+            placeholder="Tell me about your project…"
+            {...register("message", { required: "Message is required" })}
+            className="w-full px-4 py-3 min-h-[140px] rounded-lg textarea input-bordered focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+          {errors.message && (
+            <p className="mt-1 text-xs text-red-500">
+              {errors.message.message}
+            </p>
+          )}
         </div>
 
-        {/* Submit Button */}
-        <div className="form-control">
-          <button
-            type="submit"
-            className="btn w-full bg-[#233bb1] hover:cursor-pointer text-white dark:bg-[#161929] dark:border-2 border-white font-semibold dark:hover:bg-white dark:hover:text-[#161929] hover:scale-105 transition-transform"
-          >
-            Send
-          </button>
-        </div>
+        {/* Submit */}
+        <button
+          type="submit"
+          className="w-full py-3 rounded-lg font-semibold bg-[#233bb1] text-white dark:bg-[#161929] dark:border-2 border-white dark:hover:bg-white dark:hover:text-[#161929] transition-colors"
+        >
+          Send Message
+        </button>
       </form>
     </section>
   );

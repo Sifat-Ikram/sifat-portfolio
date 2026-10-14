@@ -13,9 +13,9 @@ const DrawerComponent = () => {
     { id: "about", icon: <IoPerson />, label: "About" },
     { id: "experience", icon: <FaLaptopCode />, label: "Experience" },
     { id: "skills", icon: <FaTools />, label: "Skills" },
-    { id: "education", icon: <IoBook />, label: "Education" },
     { id: "services", icon: <MdMiscellaneousServices />, label: "Services" },
     { id: "projects", icon: <FaFolderOpen />, label: "Projects" },
+    { id: "education", icon: <IoBook />, label: "Education" },
     { id: "contact", icon: <IoMailOpenSharp />, label: "Contact" },
   ];
 
